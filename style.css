@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: "Jaro", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    background-color: #ddd;
+}
+
+#logo {
+    color: blue;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#nav-links {
+    display: flex;
+    gap: 2em;
+}
+
+#nav-links a {
+    color: black;
+    text-decoration: none;
+}
+
+h1 {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: red;
+    text-align: center;
+    margin: 2em 0;
+}
+
+#animated-text {
+    text-align: center;
+    font-size: 1.2em;
+    animation: changeColor 2s infinite;
+}
+
+#image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* images will wrap onto a new line if there isn't enough space */
+}
+
+#center-image-container {
+    display: flex;
+    justify-content: center;
+    animation: moveImage 6s infinite;
+}
+
+#animated-image, #animated-image-2, #center-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    animation: rotateImage 5s infinite;
+    height: 150px;
+    width: 225px;
+}
+
+#button {
+    height: 50px;
+    width: 80px;
+    text-align: center;
+    margin: 2em auto 0;
+    background-color: red;
+    color: white;
+    border: 3px solid blue;
+}
+
+@keyframes changeColor {
+    0% {color: blue;}
+    50% {color: green;}
+    100% {color: blue;}
+}
+
+@keyframes rotateImage {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes moveImage {
+    0% {transform: translateX(-40%);}
+    50% {transform: translateX(40%);}
+    100% {transform: translateX(0);}
+}
+
+@media screen and (max-width: 768px) {
+    h1, #logo {
+        font-size: 1.5em;
+    }
+
+    #nav-links {
+        display: block;
+    }
+
+    #animated-text {
+        font-size: 1em;
+    }
+
+    #image-container, #center-image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+   #animated-image, #animated-image-2, #center-image {
+        height: 100px;
+        width: 150px;
+   }
+
+    #button {
+        height: 40px;
+        width: 60px;
+    }
+}
